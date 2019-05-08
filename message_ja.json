@@ -1,0 +1,10 @@
+{
+    "ERR_REG":   ":no_entry_sign: **ERROR! このチャンネルは既に登録済みです!**",
+    "ERR_NUM":   ":no_entry_sign: **ERROR! 数字を入力してください!!**",
+    "ERR_CNT":   ":no_entry_sign: **ERROR! チーム数が箱の中身の数より多いです!!**",
+    "CAN_SPEAK": ":tada: **チャンネル {channel_name} で使えるようになりました ;)**",
+    "REMOVED":   ":outbox_tray: **{removal} を削除しました**\n",
+    "PICKED":    ":point_right: **{picked} さんの番です**\n",
+    "REMAINS":   "**あと {size} 個残っています**",
+    "RESET":     ":inbox_tray: **リセットしました**"
+}

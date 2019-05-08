@@ -1,0 +1,10 @@
+{
+    "ERR_REG":   ":no_entry_sign: **ERROR! This channel is already registered!**",
+    "ERR_NUM":   ":no_entry_sign: **ERROR! Non-numeric argument!!**",
+    "ERR_CNT":   ":no_entry_sign: **ERROR! Team count is larger than amount in the box!!**",
+    "CAN_SPEAK": ":tada: **I can speak in {channel_name} from now! ;)**",
+    "REMOVED":   ":outbox_tray: **{removal} has removed from box**\n",
+    "PICKED":    ":point_right: **{picked}, it's your turn**\n",
+    "REMAINS":   "**{size} remains in the box**",
+    "RESET":     ":inbox_tray: **Box has reset.**"
+}

@@ -1,0 +1,4 @@
+/pick [@mention...] : Pick from the box randomly. Add @mention to specify content.
+/team count : Make teams with contents in the box. Specify count.
+/reset : Reset the box.
+/help : Show this help.
