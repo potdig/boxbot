@@ -35,19 +35,21 @@ async def on_message(mes):
     args = content.split(' ')
     if args[0] == "/pick":
         # '/pick'が来たらくじ引き
+        message = ""
         if len(args) > 1:
             # 引数指定がある場合は指定して引く
             for removal in args[1:]:
                 print(removal)
                 box.remove(removal)
-                await channel.send(f":outbox_tray: **{removal} has removed from box**")
-            await channel.send(f"**{box.size()} remains in the box**")
+                message += f":outbox_tray: **{removal} has removed from box**\n"
+            message += f"**{box.size()} remains in the box**"
         else:
             # 引数指定がない場合はランダムに引く
             picked = box.pick()
             print(picked)
-            await channel.send(f":point_right: **{picked}, it's your turn**")
-            await channel.send(f"**{box.size()} remains in the box**")
+            message += f":point_right: **{picked}, it's your turn**"
+            message += "\n" + f"**{box.size()} remains in the box**"
+        await channel.send(message)
     elif args[0] == "/team":
         # '/team'が来たらチーム分け
         if len(args) <= 1:
@@ -63,11 +65,12 @@ async def on_message(mes):
             await channel.send(":no_entry_sign: **ERROR! Team count is larger than amount in the box!!**")
             return
 
+        messages = {}
         teams = box.team(count)
         for cnt in range(len(teams)):
-            message = str(cnt + 1) + ": "
-            message += " / ".join(teams[cnt])
-            await channel.send(message)
+            messages[cnt] = str(cnt + 1) + ": "
+            messages[cnt] += " / ".join(teams[cnt])
+        await channel.send("\n".join(messages.values()))
     elif args[0] == "/reset":
         # '/reset'が来たら箱を作り直す
         client.boxes[channel.id] = LotteryBox([ member.mention for member in channel.members if member.id != client.user.id])
