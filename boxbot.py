@@ -26,6 +26,10 @@ async def on_message(mes):
         await channel.send(system_messages["CAN_SPEAK"].format(channel_name=channel.mention))
         return
 
+    print(client.allowed_channels)
+    if channel.id not in [ c.id for c in client.allowed_channels ]:
+        return
+
     # メンバーのメンションを集めて箱を作る
     if channel.id not in client.boxes or client.boxes[channel.id].size() == 0:
         box = client.boxes[channel.id] = LotteryBox([ member.mention for member in channel.members if member.id != client.user.id and member.id not in exclusive_ids])
