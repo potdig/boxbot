@@ -28,7 +28,7 @@ async def on_message(mes):
 
     # メンバーのメンションを集めて箱を作る
     if channel.id not in client.boxes or client.boxes[channel.id].size() == 0:
-        box = client.boxes[channel.id] = LotteryBox([ member.mention for member in channel.members if member.id != client.user.id])
+        box = client.boxes[channel.id] = LotteryBox([ member.mention for member in channel.members if member.id != client.user.id and member.id not in exclusive_ids])
     else:
         box = client.boxes[channel.id]
 
@@ -85,6 +85,13 @@ with open("./message.json") as f:
 
 with open("./help.txt") as f:
     help_message = f.read()
+
+exclusive_ids = []
+try:
+    f = open("./exclusive.txt")
+    exclusive_ids = [ int(id.strip()) for id in f.readlines() ]
+except:
+    print("cannot open exclusive.txt")
 
 with open('./token.txt') as f:
     client.allowed_channels = []

@@ -21,7 +21,14 @@ If console says `I'm ready!`, bot has launched.
 On Discord, bot account should be online in your server. Send `/register` on the channel you want to use the bot. **(Again, check the channel once more!!)** If you see the message with :tada: from the bot, you can use the bot ;) Send `/help` to check the usage.
 
 ## Configuration
+### Message from Bot
 You can configure message. Edit `message.json` and `help.txt`. (I made preset for English and Japanese. I recommend to make link like below)
 ```
 $ ln -sf message_ja.json message.json
 ```
+### Exclusive List
+You can exclude members from the box. Write ID of the member you want to exclude to `exclusive.txt`.
+```
+$ echo 000000000000000000 >> exclusive.txt
+```
+
