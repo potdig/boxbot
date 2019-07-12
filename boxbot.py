@@ -84,7 +84,7 @@ async def on_message(mes):
 
 
 # MAIN CODE
-with open("./message.json") as f:
+with open("./message.json", encoding="UTF-8") as f:
     system_messages = json.load(f)
 
 with open("./help.txt") as f:
