@@ -77,7 +77,7 @@ async def on_message(mes):
         await channel.send("\n".join(messages.values()))
     elif args[0] == "/reset":
         # '/reset'が来たら箱を作り直す
-        client.boxes[channel.id] = LotteryBox([ member.mention for member in channel.members if member.id != client.user.id])
+        client.boxes[channel.id] = LotteryBox([ member.mention for member in channel.members if member.id != client.user.id and member.id not in exclusive_ids])
         await channel.send(system_messages["RESET"])
     elif args[0] == "/help":
         await channel.send("```" + help_message + "```")
