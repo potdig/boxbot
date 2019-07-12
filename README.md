@@ -8,7 +8,7 @@ This bot sends a lot of mentions. Check the channel before launching!!
 ### Launching bot
 First, Make file named "token.txt" that Discord client token is written.
 ```
-$ echo "Y0ur_R4qu35T-70KeN.C0mEh3Re" > token.txt
+$ echo "Y0ur_R4qu35T-70KeN.C0mE5h3Re" > token.txt
 ```
 After it, you can launch the bot.
 ```
